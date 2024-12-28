@@ -26,6 +26,7 @@ RUN \
       curl \
       xmlstarlet \
       uuid-runtime \
+      xz-utils \
       unrar && \
     apt-get -y autoremove && \
     apt-get -y clean && \

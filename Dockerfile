@@ -41,9 +41,9 @@ RUN if [ "${TARGETPLATFORM}" = 'linux/arm/v7' ]; then \
         S6_OVERLAY_ARCH='aarch64'; \
       fi \
     && \
-    curl -J -L -o /tmp/s6-overlay-${S6_OVERLAY_ARCH}.tar.gz https://github.com/just-containers/s6-overlay/releases/download/${S6_OVERLAY_VERSION}/s6-overlay-${S6_OVERLAY_ARCH}.tar.gz && \
-    tar xzf /tmp/s6-overlay-${S6_OVERLAY_ARCH}.tar.gz -C / --exclude='./bin' && \
-    tar xzf /tmp/s6-overlay-${S6_OVERLAY_ARCH}.tar.gz -C /usr ./bin && \
+    curl -J -L -o /tmp/s6-overlay-${S6_OVERLAY_ARCH}.tar.gz https://github.com/just-containers/s6-overlay/releases/download/${S6_OVERLAY_VERSION}/s6-overlay-${S6_OVERLAY_ARCH}.tar.xz && \
+    tar xzf /tmp/s6-overlay-${S6_OVERLAY_ARCH}.tar.xz -C / --exclude='./bin' && \
+    tar xzf /tmp/s6-overlay-${S6_OVERLAY_ARCH}.tar.xz -C /usr ./bin && \
     rm -rf /tmp/* && \
     rm -rf /var/tmp/*
 

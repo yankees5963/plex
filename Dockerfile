@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 
 ARG TARGETARCH
 ARG TARGETPLATFORM
@@ -32,7 +32,7 @@ RUN \
     rm -rf /var/lib/apt/lists/*
 
 # Fetch and extract S6 overlay
-ARG S6_OVERLAY_VERSION=v2.2.0.3
+ARG S6_OVERLAY_VERSION=v3.2.0.2
 RUN if [ "${TARGETPLATFORM}" = 'linux/arm/v7' ]; then \
         S6_OVERLAY_ARCH='armhf'; \
       elif [ "${TARGETARCH}" = 'amd64' ]; then \

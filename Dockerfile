@@ -43,10 +43,7 @@ RUN if [ "${TARGETPLATFORM}" = 'linux/arm/v7' ]; then \
       fi \
     && \
     curl -J -L -o /tmp/s6-overlay-${S6_OVERLAY_ARCH}.tar.xz https://github.com/just-containers/s6-overlay/releases/download/${S6_OVERLAY_VERSION}/s6-overlay-${S6_OVERLAY_ARCH}.tar.xz && \
-    tar xf /tmp/s6-overlay-${S6_OVERLAY_ARCH}.tar.xz -C / --exclude='./bin' && \
-    tar xf /tmp/s6-overlay-${S6_OVERLAY_ARCH}.tar.xz -C /usr ./bin && \
-    rm -rf /tmp/* && \
-    rm -rf /var/tmp/*
+    tar -C / -Jxpf /tmp/s6-overlay-${S6_OVERLAY_ARCH}.tar.xz
 
 EXPOSE 32400/tcp 8324/tcp 32469/tcp 1900/udp 32410/udp 32412/udp 32413/udp 32414/udp
 VOLUME /config /transcode

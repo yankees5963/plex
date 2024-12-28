@@ -36,7 +36,7 @@ ARG S6_OVERLAY_VERSION=v3.2.0.2
 RUN if [ "${TARGETPLATFORM}" = 'linux/arm/v7' ]; then \
         S6_OVERLAY_ARCH='armhf'; \
       elif [ "${TARGETARCH}" = 'amd64' ]; then \
-        S6_OVERLAY_ARCH='amd64'; \
+        S6_OVERLAY_ARCH='x86_64'; \
       elif [ "${TARGETARCH}" = 'arm64' ]; then \
         S6_OVERLAY_ARCH='aarch64'; \
       fi \
